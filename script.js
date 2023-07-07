@@ -10,6 +10,7 @@ $(function () {
     }
 
     generateQRCode(text) {
+      document.getElementById("qrcode").innerHTML = '';
       new QRCode(document.getElementById("qrcode"), {
         text: text,
         width: $("#qrcode").width(),
@@ -48,7 +49,15 @@ $(function () {
   }
   //new Pessoa("cleybson@gmail.com", "7kbwcWmq");
   //new Pessoa("admin@localhost", "j2kiWhYN");
-  new Pessoa("", "123");
+  
+
+  $( "#login" ).on( "submit", function( event ) {
+    event.preventDefault();
+    let email = $("#email").val();
+    let senha = $("#senha").val();
+    console.log(email)
+    new Pessoa(email, senha);
+  });
 
   $('#export').click(function(){
     window.print();
