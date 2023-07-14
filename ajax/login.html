@@ -1,0 +1,64 @@
+<!-- LOGIN FORM -->
+<div id="form_login" class="mx-auto" style="max-width: 18rem">
+  <div class="card text-center bg-transparent border-0">
+    <article class="card-body">
+      <div class="card-title mb-4 mt-1">
+        <img src="assets/logo-anfibro.png" class="w-100 p-1" alt="logo" />
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group mb-2">
+          <div class="input-group">
+            <span class="input-group-text" id="login_cpf_span">
+              <i class="fa fa-user"></i>
+            </span>
+            <input
+              id="cpf"
+              class="form-control"
+              placeholder="Insira seu cpf"
+              type="text"
+              aria-describedby="login_cpf_span"
+              autocomplete="on"
+              required
+            />
+          </div>
+          <!-- input-group.// -->
+        </div>
+        <!-- form-group// -->
+        <div class="form-group mb-2">
+          <div class="input-group">
+            <span class="input-group-text" id="login_senha_span">
+              <i class="fa fa-lock"></i>
+            </span>
+            <input
+              id="password"
+              class="form-control"
+              placeholder="******"
+              type="password"
+              aria-describedby="login_senha_span"
+              autocomplete="on"
+              required
+            />
+          </div>
+          <!-- input-group.// -->
+        </div>
+        <!-- form-group// -->
+        <div class="form-group mt-2">
+          <button type="submit" class="btn btn-light btn-block">ENTRAR</button>
+        </div>
+        <!-- form-group// -->
+        <p class="text-center mt-1">
+          <button data-id="forgot" class="btn toggle text-light">
+            Esqueceu a senha?
+          </button>
+        </p>
+      </form>
+    </article>
+    <p
+      id="erros"
+      class="badge text-danger bg-light text-center"
+      style="display: none"
+    ></p>
+  </div>
+  <!-- card.// -->
+</div>

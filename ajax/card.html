@@ -1,0 +1,116 @@
+<!-- Slider main container -->
+<div class="card swiper mySwiper" style="width: 20rem">
+  <div class="swiper-wrapper mb-4">
+    <div class="swiper-slide slide_1"></div>
+    <div class="swiper-slide slide_2"></div>
+    <div class="swiper-slide slide_3"></div>
+  </div>
+  <!-- SLIDER EXPORTAR-->
+  <div class="swiper-pagination"></div>
+</div>
+<!--/template-->
+
+<!-- Botão de logout -->
+<div class="text-center mt-2">
+  <button id="logout" class="btn btn-sm btn-outline-danger bg-body-secondary" style="width: 20rem">
+    <i class="fa fa-sign-out" aria-hidden="true"></i>
+  </button>
+</div>
+<!-- Fim Botão de logout -->
+
+
+<template id="view1">
+  <!-- View card -->
+  <div class="cards">
+    <div class="row justify-content-center">
+      <div class="col-6 m-auto">
+        <img id="foto" src="/assets/user.png" class="m-auto d-block w-100 p-1" alt="foto" />
+      </div>
+      <div class="col-6 my-auto mr-1">
+        <img
+          src="assets/logo-anfibro.png"
+          class="m-auto d-block w-100 p-1"
+          alt="logo"
+        />
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="fs-6 fw-semibold">NOME COMPLETO</div>
+      <h5 id="nome" class="card-title fw-bolder"></h5>
+      <div class="card-text row mt-3">
+        <div class="col-6">
+          <strong>NÚMERO CPF </strong>
+          <div id="cpf"></div>
+        </div>
+        <div class="col-6">
+          <strong>CID:</strong>
+          <span id="cid"></span>
+        </div>
+        <div class="col-12">
+          <strong>CIDADE </strong>
+          <div id="cidade"></div>
+        </div>
+        <div class="col-6">
+          <strong>DATA DE EMISSÃO</strong>
+          <div id="emissao"></div>
+        </div>
+        <div class="col-6">
+          <strong>DATA DE VALIDADE</strong>
+          <div id="validade"></div>
+        </div>
+        <div class="col-12">
+          <strong>SITUAÇÃO</strong>
+          <div id="situacao"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template id="view2">
+  <div class="cards text-center mt-3">
+    <div class="card-body">
+      <div id="qrcode"></div>
+    </div>
+  </div>
+</template>
+
+<template id="view3">
+  <div class="cards text-center mt-3">
+    <div class="card-body text-center">
+      <button id="export" class="btn">
+        <img
+          src="assets/export.png"
+          class="d-block w-100"
+          width="126"
+          height="126"
+          alt="logo"
+        />
+        <strong>Salvar</strong>
+      </button>
+    </div>
+  </div>
+</template>
+
+<script>
+  $(() => {
+    //  Initialize Swiper
+    $(".slide_1").html($("#view1").html());
+    $(".slide_2").html($("#view2").html());
+    $(".slide_3").html($("#view3").html());
+
+    $(document).on("click", "#export", function (e) {
+      e.preventDefault();
+      $(".slide_1").addClass("card").print();
+      $(".slide_1").removeClass("card");
+      return false;
+    });
+
+    new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      crossFade: true,
+    });
+  });
+</script>

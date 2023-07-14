@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: rgb(150, 27, 150);
+}
+
+main {
+  padding: 1rem;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+strong {
+  color: #444;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+.swiper-slide {
+  min-height: 60vh;
+}
+@media print {
+  .swiper-slide {
+    min-height: 50vh;
+  }
+}
+
+.swiper-pagination-bullet {
+  background-color: #000;
+}
+.swiper-pagination-bullet-active {
+  background-color: rgb(150, 27, 150);
+  width: 20px;
+  height: 10px;
+  border-radius: 5px;
+}
